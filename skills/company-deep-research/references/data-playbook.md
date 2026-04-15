@@ -70,3 +70,14 @@ If you cannot pull daily bars via an SDK:
 - compute MA/ATR/RSI locally
 - document the data source and the exact date range
 
+## 6. Vendored Helper Skills (This Repo)
+
+This repository includes:
+
+- `skills/deep-research`
+- `skills/akshare-stock`
+
+Notes:
+
+- The deep-research `scripts/research_engine.py` is a pipeline/checklist driver; in agent runtimes it’s usually invoked as a skill to actually perform retrieval + synthesis.
+- The akshare-stock skill expects `akshare` installed in its Python runtime (commonly Python 3.9). If `akshare` import fails, you must use the fallback ladder above or install dependencies explicitly (do not assume they exist).

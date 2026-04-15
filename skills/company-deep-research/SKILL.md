@@ -38,6 +38,15 @@ If `akshare` is missing (or not supported by the installed Python version), swit
 - Prefer local searxng search when available for web search, especially in environments that prohibit Brave-style web search.
 - Prefer AkShare-style historical daily data, with fallback sources, for the latest completed trading-day close.
 - Use local market-data tools when available for price, financial statement, and share-count data.
+
+### Local Skill Integrations (Vendored)
+
+This repository vendors two helper skills for repeatable execution:
+
+- `skills/deep-research` (multi-source research pipeline and citation discipline)
+- `skills/akshare-stock` (A-share market data and technical indicators)
+
+If `akshare` or other dependencies are missing, do not silently degrade. Follow `references/data-playbook.md`.
 - Use official filings, annual reports, exchange announcements, company IR pages, and reputable data providers before media summaries.
 - If a preferred tool is unavailable, say so briefly and use the best available fallback.
 
