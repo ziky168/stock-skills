@@ -23,6 +23,15 @@ If missing, clarify or state assumptions for:
 
 Do not wait if the user explicitly asks for harness/autonomous execution. Make reasonable assumptions and label them.
 
+## Environment Preflight (Required)
+
+Before promising “latest completed trading-day close” or full K-line metrics, verify the environment:
+
+- Check the Python interpreter you will use for data pulls.
+- Check whether `akshare` is installed.
+
+If `akshare` is missing (or not supported by the installed Python version), switch to the fallback playbook in `references/data-playbook.md` and explicitly label price data as “verified” vs “pending verification”.
+
 ## Tool Priority
 
 - Prefer Claude/deep-research when the user requests deep research, research-grade output, or 10+ source cross-checking.
@@ -44,6 +53,16 @@ Do not wait if the user explicitly asks for harness/autonomous execution. Make r
 8. **Build action bands.** Provide buy/watch/reduce/avoid bands only when the valuation anchor is supportable. Otherwise state what data is missing before bands are reliable.
 9. **Lead with risk.** State key risks, disconfirming signals, and what would change the conclusion.
 10. **Cite sources.** Include source names, dates, links or local file paths, and data methods.
+
+## Data Caching (Recommended)
+
+To keep reports reproducible, cache:
+
+- The primary annual report PDF.
+- A small `key_figures.json` snapshot (revenue/profit/OCF, segment revenue, domestic vs overseas, leverage ratios).
+- Optional: a `prices.csv` or exported daily bars used for technical analysis.
+
+See `references/data-playbook.md` for the recommended folder structure and minimum fields.
 
 ## Output Contract
 
